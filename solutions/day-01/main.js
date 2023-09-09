@@ -94,7 +94,51 @@ if (sortedAges.length % 2 === 0) {
 	const middleIndex = Math.floor(sortedAges.length / 2);
 	console.log(sortedAges[middleIndex]);
 }
-const middleIndex = Math.floor(sortedAges.length / 2);
-const median =
-	Math.abs(sortedAges[middleIndex] + sortedAges[middleIndex - 1]) / 2;
-console.log(median);
+
+// average
+let sum = 0;
+for (let i = 0; i < ages.length; i++) {
+	sum += ages[i];
+	console.log(sum);
+}
+const average = sum / ages.length;
+console.log(average);
+
+const minDifference = Math.abs(minAge - average);
+const maxDifference = Math.abs(maxAge - average);
+// Compare the values
+if (minDifference > maxDifference) {
+	console.log('The absolute difference between min and average is greater.');
+} else if (maxDifference > minDifference) {
+	console.log('The absolute difference between max and average is greater.');
+} else {
+	console.log(
+		'The absolute differences between min and average, and max and average, are equal.',
+	);
+}
+
+// 2. Slice the first ten countries from the countries array
+const sliceCountry = countries.slice(10);
+console.log(sliceCountry);
+
+// 3. Find the middle country in the countries array
+
+const middleCountry = countries[Math.floor(countries.length / 2)];
+console.log(middleCountry);
+
+// 4. Divide the countries array into two equal array if it is even. If countries array is not even, one more country for the first half
+
+let firstHalf;
+let secondHalf;
+
+if (countries.length % 2 === 0) {
+	const midpoint = countries.length / 2;
+	firstHalf = countries.slice(0, midpoint);
+	secondHalf = countries.slice(midpoint);
+} else {
+	const midpoint = Math.floor(countries.length / 2);
+	firstHalf = countries.slice(0, midpoint + 1);
+	secondHalf = countries.slice(midpoint + 1);
+}
+console.log(firstHalf);
+console.log(secondHalf);
