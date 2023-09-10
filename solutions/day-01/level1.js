@@ -106,11 +106,13 @@ checkIfExist('netflix');
 const filterCompany = [];
 
 for (let i = 0; i < itCompanies.length; i++) {
-	const company = itCompanies[i];
+	const companyName = itCompanies[i];
 	let count = 0;
+	console.log(companyName);
 
-	for (let j = 0; j < company.length; j++) {
-		if (company[j] === 'o') {
+	for (let j = 0; j < companyName.length; j++) {
+		console.log(companyName[j]);
+		if (companyName[j].toLowerCase() === 'o') {
 			count++;
 		}
 
@@ -119,53 +121,7 @@ for (let i = 0; i < itCompanies.length; i++) {
 		}
 	}
 	if (count <= 1) {
-		filterCompany.push(company);
+		filterCompany.push(companyName);
 	}
 }
-
 console.log(filterCompany);
-
-// 15. Sort the array using sort() method
-itCompanies.sort();
-console.log(itCompanies);
-
-// 16. Reverse the array using reverse() method
-itCompanies.reverse();
-console.log(itCompanies);
-
-// 17. Slice out the first 3 companies from the array
-const sliceCompany = itCompanies.slice(3);
-console.log(sliceCompany);
-
-// 18. Slice out the last 3 companies from the array
-const sliceLastThreeCompany = itCompanies.slice(0, 4);
-console.log(sliceLastThreeCompany);
-
-// 19. Slicce out the midddle IT company or companies from the array
-const sliceMiddleCompany = itCompanies.slice(2, 5);
-console.log(sliceMiddleCompany);
-
-// 20. Remove the first IT company or companies from the array
-const spliceFirstCompany = itCompanies.slice(0, 1);
-console.log(spliceFirstCompany);
-console.log(`Updated array: ${itCompanies.join(', ')}`);
-
-// 21. Remove the middle IT company or companies from the array
-const middleIndex = Math.floor(itCompanies.length / 2);
-const updatedCompanies = [];
-console.log(itCompanies);
-for (let i = 0; i < itCompanies.length; i++) {
-	if (i !== middleIndex) {
-		updatedCompanies.push(itCompanies[i]);
-	}
-}
-
-console.log(`Removed company: ${itCompanies[middleIndex]}`);
-console.log(`Updated array: ${updatedCompanies.join(', ')}`);
-
-// 22. Remove the last IT company from the array
-const removedLastCompany = itCompanies.pop();
-console.log(removedLastCompany);
-
-// 23. Remove all IT companies
-console.log(itCompanies.splice());
